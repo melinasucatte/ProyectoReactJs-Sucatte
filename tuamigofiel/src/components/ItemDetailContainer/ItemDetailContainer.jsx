@@ -8,6 +8,7 @@ import "./ItemDetailContainer.css"
 
 const ItemDetailContainer = () => {
     const [producto,setProducto]= useState({})
+    const[loading, setLoading]= useState(true)
     const {pid} = useParams()
    useEffect(() =>{
       const db =getFirestore()
@@ -15,11 +16,14 @@ const ItemDetailContainer = () => {
       getDoc(queryDoc)
       .then(resp => ({ id: resp.id, ...resp.data()}))
       .then(resp=> setProducto(resp))
+      .finally(()=> setLoading(false))
     },[])
   return (
-    <div>
-        <ItemDetail producto={producto}/>
-    </div>
+      <>
+        <div className='row'>
+          { loading ? <h2 className='loading'>LOADING...</h2> : <ItemDetail producto={producto}/> }
+        </div>
+      </>
   )
 }
 
