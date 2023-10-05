@@ -4,16 +4,19 @@
     box-sizing: border-box;
     font-family: 'Signika Negative', sans-serif;
 }
+
 .row{
     display: flex;
     justify-content: center;
-    background-color: pink;
+    max-width: 100%;
 }
 .list{
     display: contents;
 }
 .loading{
     text-align: center;
+    font-size: 45px;
+    font-weight: 700;
     color: red;
     margin: 10px;
 }
@@ -29,11 +32,67 @@
     height: 200px;
     margin: 0px;
     object-fit: contain;
+    margin-bottom: 10px;
 }
 .button-detalle{
+    font-size: 20px;
+    font-weight: 700;
     background-color: orange;
+    color: red;
     border-radius: 5px;
     border: none;
     margin: 10px;
-    padding: 5px;
+    padding: 10px 20px;
+}
+.button-detalle:hover{
+    font-size: 20px;
+    font-weight: 700;
+    background-color: red;
+    color: orange;
+    transition: 0.5s;
+}
+.card-body{
+    font-size:16px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+p{
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-footer{
+    background-color: white;
+    padding: 0px;
+}
+.boton{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    justify-content: center;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+label{
+    font-weight: 700;
+}
+.total{
+    font-weight: 800;
+    color: red;
+    margin: 10px;
+}
+.center input{
+    margin: 10px;
+    padding: 10px;
+    border: red solid ;
+    font-weight: 400;
+    border-radius: 5px;
 }

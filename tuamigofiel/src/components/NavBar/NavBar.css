@@ -4,11 +4,17 @@
     box-sizing: border-box;
     font-family: 'Signika Negative', sans-serif;
 }
+
 .logo{
     color:red;
     font-size:35px;
+    font-weight: 900;
     text-decoration: none;
     margin: 20px;
+}
+.logo:hover{
+    color: orange;
+    transition: 0.5s;
 }
 .categorias{
     margin: 20px;
@@ -27,5 +33,18 @@
     color: orange;
     background-color: red;
     transition: 0.5s;
+    font-size: 23px;
+}
+.carrito{
     font-size: 25px;
+    color: white;
+    text-decoration: none;
+    background-color: red;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+.carrito:hover{
+    background-color: orange;
+    transition: 0.5s;
 }

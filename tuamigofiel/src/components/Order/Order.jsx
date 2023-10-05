@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 
+import Swal from 'sweetalert2'
+
 const Order = () => {
     const [dataForm,setDataForm] = useState({
         name: '',
@@ -23,18 +25,37 @@ const Order = () => {
         })
         order.total =precioTotal()
 
-        const queryDB = getFirestore()
-        const ordersCollection = collection(queryDB, 'orders')
-        addDoc(ordersCollection, order)
-        .then(({id}) => setId(id))
-        .catch(err => console.log(err))
-        .finally(() =>{ setDataForm({
-            name: '',
-            phone: '',
-            email: ''
+       if(!dataForm.name || !dataForm.phone || !dataForm.email)
+       {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '¡Verifique que los campos hayan sido completados correctamente!',
+                confirmButtonColor: '#d2691e',
             })
-            deleteCart()
-        })
+        }else{
+            const queryDB = getFirestore()
+            const ordersCollection = collection(queryDB, 'orders')
+            addDoc(ordersCollection, order)
+            .then(({id}) => setId(id))
+            .catch(err => console.log(err))
+            .finally(() =>{ setDataForm({
+                name: '',
+                phone: '',
+                email: ''
+                })
+                deleteCart()
+            })
+            Swal.fire({
+                icon: 'success',
+                title: `¡Orden creada con éxito ${id}! `,
+                showConfirmButton: false,
+                timer: 3500,
+                timerProgressBar: true,
+                allowOutsideClick: false,
+                allowEscapeClick: false
+            })
+        }
     }
 
 
@@ -45,10 +66,10 @@ const Order = () => {
             [evt.target.name] : evt.target.value
         })
     }
-    console.log(dataForm)
+
   return (
-        <form onSubmit={generarOrden}>
-            <h1>COMPLETE SU COMPRA!</h1>
+        <form className="center" onSubmit={generarOrden}>
+            <h1 className="titulo">COMPLETE SU COMPRA!</h1>
 
             <input 
             type="text"
@@ -75,10 +96,11 @@ const Order = () => {
             onChange={handleOnChange}
              />
 
-            <button type="submit">Finalizar Compra</button>
+            <button type="submit" className="button-detalle">Finalizar Compra</button>
 
         </form>
   )
 
-  }
+}
+
 export default Order

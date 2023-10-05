@@ -17,10 +17,10 @@ const ItemDetail = ({producto}) => {
         <div className="col cuerpo">
             <img src={producto.imageUrl} alt={producto.description} />
             <div className='texto'>
-                <p>Nombre: {producto.name}</p>
-                <p>Precio: {producto.price}</p>
-                <p>Stock: {producto.stock}</p>
-                <p>Descripcion: {producto.description}</p>
+                <p>NOMBRE: {producto.name}</p>
+                <p>PRECIO: {producto.price}</p>
+                <p>STOCK: {producto.stock}</p>
+                <p>DESCRIPCION: {producto.description}</p>
             </div>
         </div>
         <div className="col agregar">
@@ -29,11 +29,11 @@ const ItemDetail = ({producto}) => {
                     <ItemCount inicial={1} stock={5} onAdd={onAdd}/>
                 :
                 <>
-                     <Link to='/cart'>
-                        <button>Ir al Carrito</button>
+                    <Link to='/cart' className='boton'>
+                        <button className='button-detalle'>Ir al Carrito</button>
                     </Link>
-                    <Link to='/'>
-                        <button>Seguir Comprando</button>
+                    <Link to='/' className='boton'>
+                        <button className='button-detalle'>Seguir Comprando</button>
                     </Link>
                 </>
 
