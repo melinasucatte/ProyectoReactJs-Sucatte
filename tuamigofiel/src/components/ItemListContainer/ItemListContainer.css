@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Signika Negative', sans-serif;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+}
+.list{
+    display: contents;
+}
+.loading{
+    text-align: center;
+    color: red;
+    margin: 10px;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    width: 250px;
+}
+.card-img-top{
+    width: 150px;
+    height: 200px;
+    margin: 0px;
+    object-fit: contain;
+}
+.button-detalle{
+    background-color: orange;
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+    padding: 5px;
+}

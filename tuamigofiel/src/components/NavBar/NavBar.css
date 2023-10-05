@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Signika Negative', sans-serif;
+}
+.logo{
+    color:red;
+    font-size:35px;
+    text-decoration: none;
+    margin: 20px;
+}
+.categorias{
+    margin: 20px;
+}
+.cat{
+    padding: 10px;
+    background-color: orange;
+    margin: 20px;
+    color:red;
+    font-size:20px;
+    text-decoration: none;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+.cat:hover{
+    color: orange;
+    background-color: red;
+    transition: 0.5s;
+    font-size: 25px;
+}
