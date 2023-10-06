@@ -48,7 +48,7 @@ const Order = () => {
             })
             Swal.fire({
                 icon: 'success',
-                title: `¡Orden creada con éxito ${id}! `,
+                title: 'Orden fue creada con éxito',
                 showConfirmButton: false,
                 timer: 3500,
                 timerProgressBar: true,
@@ -57,8 +57,6 @@ const Order = () => {
             })
         }
     }
-
-
   
     const handleOnChange = (evt) =>{
         setDataForm({
